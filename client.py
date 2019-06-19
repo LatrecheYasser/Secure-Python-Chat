@@ -22,10 +22,10 @@ Globalvariable = {"RSA_Recieved": False,
                   "RC4_sent": False,
                   "OtherRC4": ""}
 
-# 1) création du socket :
+# 1) create a socket
 mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-# 2) envoi d'une requête de connexion au serveur :
+# 2) send a connection request to server
 try:
     mySocket.connect((HOST, PORT))
 except socket.error:
@@ -37,7 +37,7 @@ print("Trying to connect.... ")
 class ThreadReceive(threading.Thread):
     def __init__(self, conn):
         threading.Thread.__init__(self)
-        self.connexion = conn	     # réf. du socket de connexion
+        self.connexion = conn	     
         
     def run(self):
         global Globalvariable
